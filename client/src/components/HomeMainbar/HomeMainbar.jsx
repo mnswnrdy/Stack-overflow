@@ -11,58 +11,6 @@ const HomeMainbar = () => {
   const navigate= useNavigate();
 
   const questionsList = useSelector(state => state.questionsReducer)
-  
-  console.log(questionsList)
-  // const questionsList =[{
-  //   _id:1,
-  //   upVotes: 3,
-  //   downVote:2,
-  //   noOfAnswers:2,
-  //   questionTitle: "What is function?",
-  //   questionBody: "It meant to be",
-  //   questionTags: ["java", "node js", "react js", "moongoose"],
-  //   userPosted: "panda",
-  //   askedOn: "jan 1",
-  //   answer: [{
-  //     answerBody: "Answer",
-  //     userAnswerd: 'Reddy ',
-  //     answeredOn: 'jan 2',
-  //     userId: 2,
-  //   }]
-  // },{
-  //   _id:2,
-  //   upVotes: 8,
-  //   downVote:0,
-  //   noOfAnswers:2,
-  //   questionTitle: "What is function?",
-  //   questionBody: "It meant to be",
-  //   questionTags: ["java", "node js"],
-  //   userPosted: "coder",
-  //   askedOn: "jan 1",
-  //   answer: [{
-  //     answerBody: "Answer",
-  //     userAnswerd: 'Ram',
-  //     answeredOn: 'jun 9',
-  //     userId: 2,
-  //   }]
-  // },{
-  //   _id:3,
-  //   upVotes: 2,
-  //   downVote:1,
-  //   noOfAnswers:2,
-  //   questionTitle: "What is function?",
-  //   questionBody: "It meant to be",
-  //   questionTags: ["java", "node js", "react js", "moongoose"],
-  //   userPosted: "mano",
-  //   askedOn: "dec 26",
-  //   answer: [{
-  //     answerBody: "Answer",
-  //     userAnswerd: 'Reddy ',
-  //     answeredOn: 'dec 26',
-  //     userId: 2,
-  //   }]
-  // }]
-
 
   const checkAuth = () => {
     if (user === null) {

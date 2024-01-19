@@ -3,13 +3,14 @@ import { Link , useNavigate } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux'
 import {jwtDecode} from "jwt-decode";
 
+import bars from "../../assets/bars-solid.svg";
 import logo from '../../assets/logo.png';
 import search from '../../assets/search-solid.svg'
 import Avatar from '../../components/Avatar/Avatar'
 import './Navbar.css'
 import { setCurrentUser } from '../../actions/currentUser';
 
-const Navbar = () => {
+const Navbar = ({ handleSlideIn }) => {
 
     var User = useSelector((state) => state.currentUserReducer);
     const dispatch = useDispatch();
@@ -36,6 +37,10 @@ const Navbar = () => {
     return (
     <nav className='main-nav'>
       <div className='navbar'>
+      <button className="slide-in-icon" onClick={() => handleSlideIn()}>
+          <img src={bars} alt="bars" width="15" />
+        </button>
+        <div className="navbar-1">
             <Link to='/' className='nav-item nav-logo'>
                 <img src={logo} alt='logo'/>
             </Link>
@@ -47,6 +52,8 @@ const Navbar = () => {
                 <input type="text" placeholder='Search...'/>
                 <img src={search} alt="search" width="18" className="search-icon" />
             </form>
+            </div>
+            <div className="navbar-2">
             {(User === null) ? 
                 (<Link to='/Auth' className='nav-item nav-links'>Log in</Link>
                 ) :(
@@ -60,12 +67,12 @@ const Navbar = () => {
                         color="white"
                     ><Link to={`/Users/${User?.result?._id}`} style={{ color: "white", textDecoration: "none" }}> {User.result.name.charAt(0).toUpperCase()}</Link> </Avatar> 
                     <button className="nav-item nav-links" onClick={handleLogout}>
-                Log out
+                Logout
               </button>
                 </> 
                 )
             }
-
+        </div>
         </div>
     </nav>
   )

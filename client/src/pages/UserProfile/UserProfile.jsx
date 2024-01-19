@@ -9,7 +9,7 @@ import {faBirthdayCake , faPen} from "@fortawesome/free-solid-svg-icons"
 import EditProfileForm from "./EditProfileForm"
 import ProfileBio from "./ProfileBio"
 import "./UserProfile.css";
-const UserProfile = () => {
+const UserProfile = ({ slideIn, handleSlideIn }) => {
 
     const { id } = useParams();
     const currentUser = useSelector((state) => state.currentUserReducer); //loged in
@@ -20,7 +20,7 @@ const UserProfile = () => {
     
   return (
     <div className="home-container-1">
-        <LeftSidebar/>
+        <LeftSidebar slideIn={slideIn} handleSlideIn={handleSlideIn}/>
         <div className="home-container-2">
             <section>
                 <div className="user-details-container">
